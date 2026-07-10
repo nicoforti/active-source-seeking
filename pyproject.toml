@@ -1,0 +1,23 @@
+[project]
+name = "active-source-seeking"
+version = "1.0.0"
+description = "Reference simulation for active source seeking in spatio-temporal fields"
+readme = "README.md"
+requires-python = ">=3.10"
+license = "MIT"
+authors = [
+  {name = "Nicola Forti"},
+  {name = "Giorgio Battistelli"},
+  {name = "Luigi Chisci"}
+]
+dependencies = [
+    "numpy>=1.24",
+    "scipy>=1.10",
+    "matplotlib>=3.7",
+    "meshio>=5.3",
+    "scikit-fem>=10.0",
+    "tqdm>=4.66",
+]
+
+[tool.setuptools]
+packages = ["active_source_seeking"]

@@ -1,0 +1,13 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite the associated paper."
+title: "Active Source Seeking in Spatio-Temporal Fields"
+authors:
+  - family-names: Forti
+    given-names: Nicola
+  - family-names: Battistelli
+    given-names: Giorgio
+  - family-names: Chisci
+    given-names: Luigi
+year: 2026
+conference: "International Conference on Information Fusion"
+license: MIT
