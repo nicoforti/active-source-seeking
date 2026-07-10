@@ -1,12 +1,12 @@
 # Active Source Seeking in Spatio-Temporal Fields
 
-Reference Python implementation for the numerical example of the paper **Active Source Seeking in Spatio-Temporal Fields**.
+Reference Python implementation for the numerical example of the paper **Active Source Seeking in Spatio-Temporal Fields** by Nicola Forti, Giorgio Battistelli, and Luigi Chisci, International Conference on Information Fusion, 2026.
 
-The code simulates a scalar spatio-temporal field governed by an advection--diffusion PDE on a triangular finite-element mesh. A team of mobile sensors collects point measurements and moves according to a dual D-optimal active-sensing/source-seeking policy with safe motion. The source and field are estimated with a finite-element information marginalized particle filter (FE-IMPF).
+The code simulates a scalar spatio-temporal field governed by an advection-diffusion PDE on a triangular finite-element mesh. A team of mobile sensors collects point measurements and moves according to a dual active-sensing/source-seeking policy with safe motion. The source and field are estimated with a finite-element information marginalized particle filter (FE-IMPF).
 
 ## Main features
 
-- finite-element advection--diffusion field model on the included coastal mesh;
+- finite-element advection-diffusion field model on the included coastal mesh;
 - centralized FE-IMPF for joint field/source estimation;
 - posterior-expected source Fisher information matrix;
 - exact projected-information term for correlated innovations;
@@ -76,7 +76,7 @@ The paper preset uses the main numerical settings of the manuscript:
 python run_paper_example.py --preset paper
 ```
 
-This is computationally expensive: it runs 50 Monte Carlo trials, each with 400 time steps, 10 sensors, and 250 particles. On a laptop it can take many hours. For a first check, run one or a few trials:
+This is computationally expensive: it runs 50 Monte Carlo trials, each with 400 time steps, 10 sensors, and 250 particles. For a first check, run one or a few trials:
 
 ```bash
 python run_paper_example.py --preset paper --trials 1 --steps 400 --quiet
@@ -91,7 +91,7 @@ python run_paper_example.py --preset paper --trials 10 --steps 200 --particles 2
 
 ## Faster paper-like runs
 
-The full paper preset is intentionally heavy. For teaching and development, the following commands preserve the same FE-IMPF estimation loop and active source-seeking structure while reducing runtime.
+For faster development, the following commands preserve the same FE-IMPF estimation loop and active source-seeking structure while reducing runtime.
 
 ```bash
 # Fast sanity check on a laptop
@@ -190,11 +190,11 @@ The `paper` preset uses:
 - Monte Carlo setup: `N_trials = 50`, `steps = 400`;
 - field NRMSE: computed over `P_field = 200` sampled interior points.
 
-For teaching or quick checks, the `demo` preset intentionally uses fewer trials, fewer steps, and fewer particles.
+For quick checks, the `demo` preset intentionally uses fewer trials, fewer steps, and fewer particles.
 
-## Suggested use in teaching
+## Suggested use
 
-A good first exercise is to run the quick demo, inspect `run_paper_example.py`, and vary one parameter at a time: the number of sensors, the number of particles, or the noise variance. Students can then compare MAP and MMSE source estimates and discuss how the active-sensing objective changes sensor trajectories.
+A good first exercise is to run the quick demo, inspect `run_paper_example.py`, and vary one parameter at a time: the number of sensors, the number of particles, or the noise variance.
 
 ## Citation
 
